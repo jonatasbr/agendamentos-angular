@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LoginResponse } from '../types/login-response.type';
 import { tap } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,10 @@ import { tap } from 'rxjs';
 export class LoginService {
   apiUrl: string = "http://localhost:3333"
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(
+    private httpClient: HttpClient,
+    private router: Router
+  ) { }
 
   login(email: string, password: string){
     console.log('login service')
@@ -18,6 +22,7 @@ export class LoginService {
       tap((value) => {
         localStorage.setItem("access_token", value.access_token)
         localStorage.setItem("name", value.name)
+        this.router.navigate(['/usuarios']);
       })
     )
   }

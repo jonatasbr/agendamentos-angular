@@ -4,7 +4,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { PrimaryInputComponent } from '../../components/primary-input/primary-input.component';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { EsqueciSenhaService } from '../../services/esqueci-senha.service';
+import { EsqueciSenhaService } from '../../services/esqueci-senha/esqueci-senha.service';
 
 interface EsqueciSenhaForm {
   email: FormControl,

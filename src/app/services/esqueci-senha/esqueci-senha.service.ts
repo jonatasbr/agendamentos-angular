@@ -1,15 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EsqueciSenhaService {
-  apiUrl: string = "http://localhost:3333"
 
   constructor(private httpClient: HttpClient) { }
 
   execute(email: string){
-    return this.httpClient.post(this.apiUrl + "/forgot", { email })
+    return this.httpClient.post(environment.apiUrl + "/forgot", { email })
   }
 }

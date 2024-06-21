@@ -1,0 +1,20 @@
+<app-default-login-layout
+    title="Esqueci senha"
+    primaryBtnText="Enviar e-mail"
+    secondaryBtnText="Voltar"
+    (submit)="submit()"
+    (navigate)="navigate()"
+    [disablePrimaryBtn]="!esqueciSenhaForm.valid"
+>
+  <form [formGroup]="esqueciSenhaForm">
+    <app-primary-input
+      formControlName="email"
+      inputName="email"
+      type="email"
+      label="Email"
+      placeholder="johndoe@gmail.com"
+    >
+      <img src="/assets/svg/email-icon.svg"/>
+    </app-primary-input>
+  </form>
+</app-default-login-layout>

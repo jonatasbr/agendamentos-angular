@@ -1,7 +1,10 @@
 <app-default-login-layout
-    title="Acesse ao sistema"
+    title="Acessar sistema"
     primaryBtnText="Acessar"
-    secondaryBtnText="Esqueci senha"
+    secondaryBtnText="Esqueci Senha"
+    (submit)="submit()"
+    (navigate)="navigate()"
+    [disablePrimaryBtn]="!loginForm.valid"
 >
   <form [formGroup]="loginForm">
     <app-primary-input
@@ -17,8 +20,8 @@
       formControlName="password"
       inputName="password"
       type="password"
-      label="Senha"
-      placeholder="digite sua senha"
+      label="Sua senha"
+      placeholder="sua senha"
     >
       <img src="/assets/svg/password-icon.svg"/>
     </app-primary-input>

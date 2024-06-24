@@ -5,6 +5,8 @@ import { PrimaryInputComponent } from '../../components/primary-input/primary-in
 import { Router } from '@angular/router';
 import { LoginService } from '../../services/login/login.service';
 import { ToastrService } from 'ngx-toastr';
+import { HttpInterceptorInterceptor } from '../../../interceptors/http-interceptor.interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 interface LoginForm {
   email: FormControl,
